@@ -12,7 +12,7 @@ public class BaseScript {
 
     @BeforeMethod
     public void before() {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "usr/local/bin/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);

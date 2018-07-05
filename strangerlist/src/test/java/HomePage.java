@@ -27,6 +27,7 @@ public class HomePage {
         WebElement target = driver.findElement(By.xpath("//li[2]/div[@class = 'media-left']"));//*[@id="content"]/div[1]/div/ul/li[2]/div
         String elementTitle = element.getText();
         (new Actions(driver)).dragAndDrop(element, target).perform();
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
         String secondRowTitle = driver.findElement(By.xpath("//li[2]/div[@class = 'media-left']")).getText();
         return secondRowTitle.contains(elementTitle);
     }
@@ -49,6 +50,7 @@ public class HomePage {
         driver.findElement(By.name("text")).sendKeys(description);
         driver.findElement(By.id("inputImage")).sendKeys(image);
         driver.findElement(By.xpath("//button[text()='Update Item']")).click();
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
 
     }
 
@@ -65,6 +67,7 @@ public class HomePage {
         WebElement element = driver.findElement(By.xpath("//li["+row+"]/div[@class = 'media-left']"));
         element.findElement(By.xpath("//button[text()='Delete']")).click();
         driver.findElement(By.xpath("//button[@ng-click='submit()']")).click();
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
     }
 
     //Add Method
@@ -73,6 +76,7 @@ public class HomePage {
         driver.findElement(By.name("text")).sendKeys(description);
         driver.findElement(By.id("inputImage")).sendKeys(image);
         driver.findElement(By.xpath("//button[text()='Create Item']")).click();
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
 
     }
 }
